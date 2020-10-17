@@ -70,15 +70,21 @@ tr:nth-child(even) {
           Your Points : {{you}}
       </div>
       <div>
-          Share You Points on 
-          <ul>
-              <li><a href="">Facebook</a></li>
-              <li><a href="">Twitter</a></li>
-              <li><a href="">LinkedIn</a></li>
+        Share You Points on 
+        <ul>
+            <li><a href="https://www.facebook.com/sharer/sharer.php?u=http://127.0.0.1:8000/leaderboard/">
+              Facebook
+              </a></li>
+            <li><a href="https://twitter.com/home?status=hey%20i%20got%20pointshere%20points%20have%20a%20look">
+              Twitter
+              </a></li>
+            <li><a href="https://www.linkedin.com/shareArticle?mini=true&url=http://brighterbees.com/&title=Check%20my%20points%20on%20Fitbit%20is%20%7B%7Bi.points%7D%7D!&source=http://127.0.0.1:8000/leaderboard/">
+Linkedin
+</a></li>
 
 
-          </ul>
-      </div>
+        </ul>
+    </div>
       <!-- <button id="edit-btn" class="trigger btn_modal"><a id="edit" >Add Food</a></button> -->
 
       
@@ -110,6 +116,8 @@ tr:nth-child(even) {
 
 
     </div>
+    {% include 'footer.html' %}
+
 
 </body>
 </html>
