@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+
+    <title>Home</title>
+    <style></style>
+  </head>
+  <body>
+    <nav>
+      <div class="left">
+        <h2>Fitbit</h2>
+      </div>
+      <div class="right">
+        {% if option %}
+        <a href="{% url 'profile' %}">Profile</a>
+          {% else %}
+        <a href="{% url 'signin' %}">Login</a>         
+        {% endif %}
+      </div>
+    </nav>
+
+    <header>
+        <div class="container content">
+            <h3>CONNECT TO HEALTH </h3>
+            <h1>Be Fit and Track your health</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt assumenda reprehenderit sint, vel maxime sequi dolorum cumque ut praesentium molestiae quasi, adipisci fugiat fuga nesciunt mollitia officia! Ad, ratione provident.<br>
+</p>
+            <a href="{% url 'signup' %}"><button style="padding: 3px 8px;background: transparent;border: 2px solid darkblue;font-size: 18px;border-radius: 3px;box-shadow: 4px 4px 5px rgba(0,0,0,0.1);cursor: pointer;">Register Now</button></a>
+            <!-- <button style="margin-left:15px;padding: 3px 8px;background: transparent;border: 2px solid darkblue;font-size: 18px;border-radius: 3px;box-shadow: 4px 4px 5px rgba(0,0,0,0.1);">Calculate Calorie</button> -->
+
+        </div>
+        <div class="container">
+            <img src="{%  static 'home.png' %}" alt="" / >
+        </div>
+
+    </header>
+    <header >
+      <div class="container hide">
+        <img src="{%  static 'hom2.png' %}" alt="" / >
+      </div>
+      
+   
+<div class="container fm" style="margin:20px 20px;">
+  <h2 >Calorie Calculator</h2>
+  <input type="number" placeholder="Age in years" class="bmi_input" id="age" required min="2" max="100"/>
+  <input type="number" placeholder="Weight in KG" class="bmi_input" id="weight" required min="2" max="400"/>
+  <input type="number" placeholder="Height in CM" class="bmi_input" id="height" required min="40cm"/>
+  <select id="gender" class="bmi_input">
+      <option value="0">Male</option>
+      <option value="1">Female</option>
+
+  </select>
+  <input type="text" readonly placeholder="Calorie/day" class="bmi_input" id="result"/>
+
+<button style="padding: 3px 8px;background: transparent;border: 2px solid darkblue;font-size: 18px;border-radius: 3px;box-shadow: 4px 4px 5px rgba(0,0,0,0.1);cursor: pointer; display: block;" onclick="calc()">Calculate</button>
+  <!-- <button style="margin-left:15px;padding: 3px 8px;background: transparent;border: 2px solid darkblue;font-size: 18px;border-radius: 3px;box-shadow: 4px 4px 5px rgba(0,0,0,0.1);">Calculate Calorie</button> -->
+
+</div>
+    </header>
+    <script>
+        function calc(){
+            // preventDefault(); 
+            console.log(age.value,weight.value,height.value,gender.value)
+
+            if (gender.value=='0'){
+                console.log('male');
+
+            cal =   66.47 + (13.75 * parseInt(weight.value)) + (5.003 * parseInt(height.value)) - (6.755 * parseInt(age.value))
+            result.value =  cal+ 'Cal/day'
+            }
+            else{
+                cal =   651.1 + (9.563 * parseInt(weight.value)) + (1.85 * parseInt(height.value)) - (4.676 * parseInt(age.value))
+            result.value =  cal + ' Cal/day'
+            }
+        }
+    </script>
+  </body>
+</html>
+
+
+
+
